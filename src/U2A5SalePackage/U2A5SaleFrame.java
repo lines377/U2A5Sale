@@ -5,7 +5,7 @@
  */
 
 package U2A5SalePackage;
-
+import java.text.*;
 /**
  *
  * @author xagod6351
@@ -136,6 +136,19 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
+     private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+       double discountAmount,discountPrice;
+     discountPrice = Double.parseDouble(amountInput.getText());
+     DecimalFormat x = new DecimalFormat("$###.00");
+     if(discountPrice >= 10){
+         discountAmount=discountPrice*0.1;
+         amountOutput.setText(x.format(discountAmount));
+         discountPrice=discountPrice-discountAmount;
+         priceOutput.setText(x.format(discountPrice));
+     }
+     else{
+     }
+    }        
 
     /**
      * @param args the command line arguments
