@@ -5,7 +5,7 @@
  */
 
 package U2A5SalePackage;
-
+import java.text.*;
 /**
  *
  * @author xagod6351
@@ -17,6 +17,7 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
      */
     public U2A5SaleFrame() {
         initComponents();
+        
     }
 
     /**
@@ -28,48 +29,50 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        button1 = new java.awt.Button();
-        button2 = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        headerLable = new javax.swing.JLabel();
+        inputLable = new javax.swing.JLabel();
+        amountOutputLable = new javax.swing.JLabel();
+        priceOutputLable = new javax.swing.JLabel();
+        calcButton = new javax.swing.JButton();
+        amountInput = new javax.swing.JTextField();
+        amountOutput = new javax.swing.JLabel();
+        priceOutput = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-
-        button1.setLabel("button1");
-
-        button2.setLabel("button2");
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Borg 9", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("$aleS $hopper");
+        headerLable.setBackground(new java.awt.Color(0, 0, 0));
+        headerLable.setFont(new java.awt.Font("Borg 9", 0, 36)); // NOI18N
+        headerLable.setForeground(new java.awt.Color(255, 0, 0));
+        headerLable.setText("$aleS $hopper");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setText("Amount Of Purchaces: ");
+        inputLable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        inputLable.setText("Amount Of Purchaces: ");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel2.setText("Discount Amount:");
+        amountOutputLable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        amountOutputLable.setText("Discount Amount:");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("Discounted Price:");
+        priceOutputLable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        priceOutputLable.setText("Discounted Price:");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Enter");
+        calcButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        calcButton.setText("Enter");
+        calcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcButtonActionPerformed(evt);
+            }
+        });
+
+        amountOutput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        amountOutput.setText("$XX.XX");
+
+        priceOutput.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        priceOutput.setText("$XX.XX");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,35 +82,44 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(204, 204, 204)
-                        .addComponent(jButton1))
+                        .addComponent(calcButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)))))
+                                .addComponent(priceOutputLable, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(headerLable)
+                                .addComponent(amountOutputLable))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(inputLable)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(priceOutput, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(amountOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(amountInput, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(headerLable)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(amountInput, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputLable, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountOutputLable)
+                    .addComponent(amountOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(priceOutputLable)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(priceOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(2, 2, 2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(calcButton)
                 .addGap(27, 27, 27))
         );
 
@@ -133,9 +145,19 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
+    private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
+       double discountAmount,discountPrice;
+     discountPrice = Double.parseDouble(amountInput.getText());
+     DecimalFormat x = new DecimalFormat("$###.00");
+     if(discountPrice >= 10){
+         discountAmount=discountPrice*0.1;
+         amountOutput.setText(x.format(discountAmount));
+         discountPrice=discountPrice-discountAmount;
+         priceOutput.setText(x.format(discountPrice));
+     }
+     else{
+     }
+    }//GEN-LAST:event_calcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,17 +195,17 @@ public class U2A5SaleFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
-    private java.awt.Button button2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField amountInput;
+    private javax.swing.JLabel amountOutput;
+    private javax.swing.JLabel amountOutputLable;
+    private javax.swing.JButton calcButton;
+    private javax.swing.JLabel headerLable;
+    private javax.swing.JLabel inputLable;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel priceOutput;
+    private javax.swing.JLabel priceOutputLable;
     // End of variables declaration//GEN-END:variables
 }
